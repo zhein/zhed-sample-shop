@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<div class="login-wrapper">
+    <div class="top"></div>
+
+    <div class="middle">
+        <div class="login-box">
+            <div class="header">
+                <span class="prefix">
+                    <i class="fa fa-shopping-cart"></i> ZHED
+                </span>
+                <span>Shop</span>
+            </div>
+            <div class="content">
+                <div id="panel_current_user_information">
+                    <span>
+                        Login as <span id="CurrentUser"></span>
+                        <br />
+                        or
+                    </span>
+                </div>
+                <div id="panel_login_as_guest">
+                    <span class="">New GUEST</span>@Html.TextBox("GuestName", string.Empty, new { style = "width: 200px; margin-left: 18px;", placeholder = "Guest Name" })
+                </div>
+                <div class="note-small align-right">
+                    *Leave blank if you want to login as current Guest.
+                </div>
+                <div id="panel_button">
+                    <button id="buttonProceedGuest" class="button-blue full-width">Proceed</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @Html.AntiForgeryToken();
+    @Html.Hidden("BaseUrl", Url.Content("~/"))
+</div>
+
+<script type="text/javascript" data-main="@Url.Content("~/js/zhed.config")" src="@Url.Content("~/lib/require-js/require.js")"></script>
+<script type="text/javascript">
+    require(['zhed.login'], function () { });
+</script>

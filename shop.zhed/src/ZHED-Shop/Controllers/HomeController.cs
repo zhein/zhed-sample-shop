@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ZHED_Shop.Common;
 
 namespace ZHED_Shop.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            ViewBag.SiteName = GeneralConfiguration.SITE_NAME;
+            return View("~/Views/Home/Login.cshtml");
+        }
+
+        public IActionResult Login()
+        {
+            return View("~/Views/Home/Login.cshtml");
         }
 
         public IActionResult About()

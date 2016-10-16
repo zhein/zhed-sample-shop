@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<div class="store-container">
+    <div class="navigation">
+        <div class="left">
+            <a href="@Url.Content("~/")">Home</a>
+            |
+            <a href="@Url.Content("~/Store/Index")">Store</a>
+        </div>
+        <div class="right">
+            <span id="active_user"></span>
+            |
+            <a href="@Url.Content("~/Cart")"><i class="fa fa-cart-plus"></i></a>
+        </div>
+    </div>
+    <div class="header">
+        <span><i class="fa fa-envira"></i> ZHED Shop</span>
+    </div>
+    <div class="content" id="item-container">
+        @*<div class="item-wrapper">
+                <div class="item-image">
+                    <img src="~/images/Items/z-001.png" style="height: 100%; width: 100%; left: 0px;" />
+                </div>
+                <div class="item-name">
+                    <span>Honey Bee - Kuda Goyang</span>
+                </div>
+                <div class="item-price">
+                    <span>Rp. 250.000,-</span>
+                </div>
+                <div class="item-button">
+                    <button class="button small"><i class="fa fa-shopping-cart"></i> Buy</button>
+                </div>
+            </div>*@
+    </div>
+</div>
+
+
+<script type="text/javascript" data-main="@Url.Content("~/js/zhed.config")" src="~/lib/require-js/require.js"></script>
+<script type="text/javascript">
+    require(['zhed.store'], function () { });
+</script>

@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<div class="store-container">
+    <div class="navigation">
+        <div class="left">
+            <a href="@Url.Content("~/")">Home</a>
+            |
+            <a href="@Url.Content("~/Store/Index")">Store</a>
+        </div>
+        <div class="right">
+            <span id="active_user"></span>
+            |
+            <a href="@Url.Content("~/Cart")"><i class="fa fa-cart-plus"></i></a>
+        </div>
+    </div>
+    <div class="header">
+        <span><i class="fa fa-envira"></i> ZHED Shop</span>
+    </div>
+    <div class="cart-container content" id="cart-container">
+        <div class="cart-toolbar">
+            <button id="buttonBackToCart" class="button-blue small" style="float: left;">
+                <i class="fa fa-cart-arrow-down"></i> Back to Cart
+            </button>
+            <button id="buttonConfirmSales" class="button-blue small" style="float: right;">
+                <i class="fa fa-font-awesome"></i> Confirm
+            </button>
+        </div>
+        <div class="clear"></div>
+        <table id="CartItems" class="">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Customer Name</td>
+                    <td colspan="3">
+                        <span id="customerName"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="vertical-align: top;">Address</td>
+                    <td colspan="3">
+                        @Html.TextArea("address", "", new { style = "width: 300px; height: 150px;" })
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Shipping Courier</td>
+                    <td colspan="3">
+                        @Html.DropDownList("shippingCourier", new List<SelectListItem>()
+                   {
+
+                       new SelectListItem() {
+                           Text = "DHL Express",
+                           Value = "DHL Express"
+                       },
+                       new SelectListItem() {
+                           Text = "JNE",
+                           Value = "JNE"
+                       }
+                   }, new { style = "width: 200px;" })
+                    </td>
+
+                </tr>
+
+                @*<tr>
+                        <td class="col-1" style="padding-left: 20px; width: 200px;">
+                            <div class="item-wrapper">
+                                <div class="item-image">
+                                    <img src="~/images/Items/z-001.png" style="width: 100px; height: 100px; left: 0px;" />
+                                </div>
+                                <div class="item-name">
+                                    <span>Honey Bee - Kuda Goyang</span>
+                                </div>
+                                <div class="item-price">
+                                    <span>Rp. 250.000,-</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="col-2" style="padding-left: 20px; width: 200px;">Qty = 1</td>
+                        <td class="col-3" style="padding-left: 20px; width: 200px;">SubTotalnya Rp.</td>
+                        <td class="col-4" style="padding-left: 20px; width: 200px;"><button class="button small"><i class="fa fa-remove"></i> Remove</button></td>
+                    </tr>*@
+            </tbody>
+        </table>
+        <table id="CartSummary" style="border-top: 1px solid black; margin-bottom: 25px;">
+            <tbody>
+                <tr >
+                    <td>Total</td>
+                    <td> : </td>
+                    <td>Rp. <span id="totalPriceBeforeShipping"></span></td>
+                </tr>
+                <tr>
+                    <td>Shipping Cost</td>
+                    <td> : </td>
+                    <td>Rp. <span id="shippingCost"></span></td>
+                </tr>
+                <tr>
+                    <td>SubTotal</td>
+                    <td> : </td>
+                    <td>Rp. <span id="totalPriceAfterShipping"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript" data-main="@Url.Content("~/js/zhed.config")" src="~/lib/require-js/require.js"></script>
+<script type="text/javascript">
+    require(['zhed.checkout'], function () { });
+</script>

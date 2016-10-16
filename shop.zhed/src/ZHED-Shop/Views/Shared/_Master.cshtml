@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ZHED Shop</title>
+
+    <link rel="stylesheet" type="text/css" href="~/css/zhed.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/font-awesome.min.css" />
+</head>
+<body>
+    @Html.Hidden("BaseUrl", Url.Content("~/"))
+    <div class="block-wrapper">
+    </div>
+    <div class="block-wrapper-content">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    @RenderBody()
+</body>
+</html>

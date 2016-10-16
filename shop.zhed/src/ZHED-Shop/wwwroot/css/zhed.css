@@ -1,0 +1,249 @@
+﻿.button-blue {
+  font-family: Boing-Bold, 'Arial Black', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 0 solid transparent;
+  display: block;
+  height: 45px;
+  font-size: 18px;
+  padding-left: 0;
+  padding-right: 0;
+  white-space: normal;
+  color: #fff !important;
+  background: #1f73da !important;
+  border-color: #1f73da !important;
+}
+.button-blue.full-width {
+  width: 100%;
+}
+.button-blue.small {
+  font-size: 15px;
+  font-weight: bolder;
+  height: 30px;
+  padding: 5px;
+}
+input {
+  line-height: 25px;
+  font-size: 22px;
+  padding-left: 3px;
+}
+html,
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+.login-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #E8E8E8;
+}
+.login-wrapper .top {
+  height: 40px;
+  background-color: #1D6CCD;
+}
+.login-wrapper .middle {
+  background-color: #E8E8E8;
+  background-image: url(../images/backgrounds/bg_login.png);
+  background-repeat: no-repeat;
+  height: 90%;
+  bottom: 40px;
+}
+.login-wrapper .middle .login-box {
+  position: absolute;
+  bottom: 60px;
+  width: 560px;
+  right: 100px;
+  background-color: white;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.login-wrapper .middle .login-box .header {
+  background-color: #333333;
+  color: white;
+  height: 100px;
+  line-height: 100px;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+.login-wrapper .middle .login-box .header .prefix {
+  color: #F3B50F;
+}
+.login-wrapper .middle .login-box .content {
+  height: 365px;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 25px;
+}
+.login-wrapper .middle .login-box .content > #panel_current_user_information {
+  margin-bottom: 15px;
+}
+.login-wrapper .middle .login-box .content > #panel_login_as_guest {
+  margin-bottom: 15px;
+}
+.login-wrapper .middle .login-box .content > #panel_button {
+  margin-bottom: 15px;
+}
+.login-wrapper .middle .login-box .content span {
+  font-size: 25px;
+  font-weight: 400;
+  font-family: Boing-Bold, 'Arial Black', sans-serif;
+}
+.login-wrapper .bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #E8E8E8;
+}
+.cart-container > .cart-toolbar {
+  padding-bottom: 20px;
+}
+.cart-container > table > tbody > tr > td.col-1 {
+  width: 200px;
+  height: 200px;
+}
+.cart-container > table > tbody > tr > td.col-1 > .item-wrapper > .item-image > img {
+  width: 200px;
+  height: 200px;
+}
+.store-container {
+  width: 100%;
+  height: 100%;
+}
+.store-container > .navigation {
+  background-color: #F2F2F2;
+  height: 40px;
+  border-bottom: 1px solid #C2C2C2;
+  font-size: 25px;
+}
+.store-container > .navigation > .left {
+  float: left;
+  line-height: 40px;
+  margin-left: 35px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.store-container > .navigation > .left:hover {
+  color: #7F7E7E;
+}
+.store-container > .navigation > .left > a {
+  text-decoration: none;
+}
+.store-container > .navigation > .left > a:visited {
+  color: black;
+}
+.store-container > .navigation > .left > a:hover {
+  color: #7F7E7E;
+}
+.store-container > .navigation > .right {
+  margin-right: 35px;
+  float: right;
+  line-height: 40px;
+  cursor: pointer;
+}
+.store-container > .navigation > .right:hover {
+  color: blueviolet;
+}
+.store-container > .header {
+  height: 110px;
+  background-color: antiquewhite;
+  border-bottom: 1px solid #404040;
+  text-align: center;
+  line-height: 110px;
+  font-weight: bold;
+  font-size: 35px;
+}
+.store-container > .content {
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 15px;
+}
+.store-container > .content > .item-wrapper {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  height: 325px;
+  width: 250px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #C2C2C2;
+  background-color: #F2F2F2;
+}
+.store-container > .content > .item-wrapper > .item-image {
+  height: 230px;
+  width: 250px;
+  /*background-color: gray;
+                background-repeat: no-repeat;
+                background-size: cover;*/
+}
+.store-container > .content > .item-wrapper > .item-name {
+  height: 45px;
+  text-align: center;
+}
+.store-container > .content > .item-wrapper > .item-name > span {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.store-container > .content > .item-wrapper > .item-price {
+  margin-top: 10px;
+  text-align: center;
+}
+.store-container > .content > .item-wrapper > .item-price > span {
+  color: red;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.store-container > .content > .item-wrapper > .item-button {
+  text-align: center;
+}
+.store-container > .content > .item-wrapper > .item-button > button {
+  margin-top: 5px;
+  font-weight: bolder;
+}
+.note-small {
+  color: red;
+  font-size: 12px;
+  font-weight: bolder;
+  font-style: italic;
+}
+.align-right {
+  text-align: right;
+}
+.block-wrapper {
+  /*display: none;*/
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0.4;
+  background-color: black;
+  text-align: center;
+}
+.block-wrapper-content {
+  /*display: none;*/
+  position: absolute;
+  z-index: 1001;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  padding-top: 20%;
+}
+.block-wrapper-content > i {
+  color: white;
+  font-size: 65px;
+  line-height: 100%;
+}
+.clear {
+  clear: both;
+}

@@ -1,5 +1,10 @@
 ﻿/// <autosync enabled="true" />
-/// <reference path="js/site.js" />
+/// <reference path="js/zhed - copy.store.js" />
+/// <reference path="js/zhed.checkout.js" />
+/// <reference path="js/zhed.config.js" />
+/// <reference path="js/zhed.helper.js" />
+/// <reference path="js/zhed.login.js" />
+/// <reference path="js/zhed.store.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />
 /// <reference path="lib/jquery-validation/dist/jquery.validate.js" />

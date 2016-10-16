@@ -4,9 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ZHED_Shop.Common;
+using ZHED_Shop.Models.Entities;
+using ZHED_Shop.Services;
 
 namespace ZHED_Shop
 {
@@ -37,6 +41,19 @@ namespace ZHED_Shop
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+
+            services.AddTransient(typeof(CartService));
+            services.AddTransient(typeof(CommonHelper));
+            services.AddTransient(typeof(ItemService));
+            services.AddTransient(typeof(CartService));
+
+            services.AddDistributedMemoryCache();
+            services.AddDbContext<ZhedShopContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("ZhedShop"))
+            );
+            services.AddMemoryCache();
+            services.AddSession();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +77,7 @@ namespace ZHED_Shop
             app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
@@ -67,6 +85,7 @@ namespace ZHED_Shop
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

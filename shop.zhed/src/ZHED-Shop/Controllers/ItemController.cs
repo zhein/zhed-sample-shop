@@ -1,19 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+﻿using Microsoft.AspNetCore.Mvc;
+using ZHED_Shop.Models.Entities;
+using ZHED_Shop.Services;
 
 namespace ZHED_Shop.Controllers
 {
     public class ItemController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+        private ItemService itemService;
+        private ZhedShopContext zhedShopContext;
+
+        public ItemController(ZhedShopContext zhedShopContext, ItemService itemService)
         {
-            return View();
+            this.zhedShopContext = zhedShopContext;
+            this.itemService = itemService;
+        }
+
+        [HttpPost]
+        public JsonResult GetItems()
+        {
+            var items = itemService.GetItems(zhedShopContext);
+            return Json(items);
         }
     }
 }
