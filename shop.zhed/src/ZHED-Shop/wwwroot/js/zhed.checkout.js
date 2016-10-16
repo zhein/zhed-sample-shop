@@ -7,6 +7,7 @@
         Address: '',
         Items: null
     };
+    var helper = helperApp;
 
     loadItems();
 
@@ -102,7 +103,6 @@
             userData.Address = $('#address').val();
             userData.ShippingCourier = $('#shippingCourier').val();
 
-
             if (helperApp.helper.isNullOrEmpty(userData.Address)) {
                 alert('Address cannot be empty!');
                 return;
@@ -114,6 +114,10 @@
                     userData,
                     function (response) {
                         console.log(response);
+                        if (response.status = true) {
+                            alert('Order has been confirmed!');
+                            window.location = '/';
+                        }
                     }
                 );
             }

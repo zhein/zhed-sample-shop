@@ -22,14 +22,19 @@
 
         var renderPanel = function (response) {
             var userData = response.data;
-            if (!helperApp.helper.isNullOrEmpty(userData.guestName)) {
-                helperApp.helper.panel.show('panel_current_user_information');
+            if (!helperApp.helper.isNullOrEmpty(userData)) {
+                if (!helperApp.helper.isNullOrEmpty(userData.guestName)) {
+                    helperApp.helper.panel.show('panel_current_user_information');
+                    $('#CurrentUser').html(userData.guestName);
+                }
+                else {
+                    helperApp.helper.panel.hide('panel_current_user_information');
+                }
             }
             else {
                 helperApp.helper.panel.hide('panel_current_user_information');
             }
 
-            $('#CurrentUser').html(userData.guestName);
         }
         var isAnyActiveUser = checkActiveUser(renderPanel);
     }
